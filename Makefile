@@ -12,7 +12,7 @@ build:
 	docker build -t "$(AUTHOR)/$(NAME):$(VERSION)" .
 
 stop:
-	@if [[ `docker inspect -f {{.State.Running}} "$(NAME)" 2> /dev/null` == "true" ]]; then \
+	@if [[ "$(shell docker inspect -f {{.State.Running}} "$(NAME)" 2> /dev/null)" == "true" ]]; then \
 		printf "INFO: Stopping running container '$(NAME)' ..."; \
 		docker stop "$(NAME)" &> /dev/null && printf " done!\n" || printf " failed!\n"; \
 	else \
@@ -20,7 +20,7 @@ stop:
 	fi
 
 remove:
-	@if [[ `docker inspect -f {{.State.Running}} "$(NAME)" 2> /dev/null` == "false" ]]; then \
+	@if [[ "$(shell docker inspect -f {{.State.Running}} "$(NAME)" 2> /dev/null)" == "false" ]]; then \
 		printf "INFO: Removing existing container '$(NAME)' ..."; \
 		docker rm "$(NAME)" &> /dev/null && printf " done!\n" || printf " failed!\n"; \
 	else \
