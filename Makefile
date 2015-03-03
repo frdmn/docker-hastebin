@@ -2,6 +2,7 @@ AUTHOR = frdmn
 NAME = docker-hastebin
 VERSION = 1.0.0
 HOSTPORT = 7777
+SHELL := /bin/bash
 
 .PHONY: all build
 
