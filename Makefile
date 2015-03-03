@@ -29,4 +29,4 @@ remove:
 
 run: stop remove
 	@printf "INFO: Starting new container '$(NAME)' ..."
-	docker run -d --name="$(NAME)" -p $(HOSTPORT):7777 -v $(shell pwd)/storage:/opt/haste/storage $(AUTHOR)/$(NAME):$(VERSION) &> /dev/null && printf " done!\n" || printf " failed!\n"
+	@docker run -d --name="$(NAME)" -p $(HOSTPORT):7777 -v $(shell pwd)/storage:/opt/haste/data $(AUTHOR)/$(NAME):$(VERSION) &> /dev/null && printf " done!\n" || printf " failed!\n"
