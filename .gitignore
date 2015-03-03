@@ -26,4 +26,5 @@ Temporary Items
 #####=== docker-hastebin ===#####
 
 opt/config.js
-storage
+storage/*
+!storage/.gitkeep
