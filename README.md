@@ -5,9 +5,9 @@ Dockerized version of @seejohnrun' [haste-server](https://github.com/seejohnrun/
 ### Installation
 
 1. Clone repository:  
-  `git clone https://github.com/frdmn/docker-hastebin.git /opt/hastebin`
+  `git clone https://github.com/frdmn/docker-hastebin.git /opt/docker-hastebin`
 1. Adjust configuration:  
-  `cd /opt/hastebin`  
+  `cd /opt/docker-hastebin`  
   `cp opt/config.example.js opt/config.js`  
   `vi opt/config.js`  
 1. Build docker image:  
