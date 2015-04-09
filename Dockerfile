@@ -7,6 +7,11 @@ RUN git clone https://github.com/seejohnrun/haste-server.git /opt/haste
 
 # Adding customization theme setup to haste
 ADD opt/config.js /opt/haste/
+
+# Override logo
+ADD opt/logo.png /opt/haste/static/
+
+# Set working directory
 WORKDIR /opt/haste
 
 # Install haste-server
