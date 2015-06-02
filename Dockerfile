@@ -12,6 +12,9 @@ ADD opt/config.js /opt/haste/
 ADD opt/logo.png /opt/haste/static/
 ADD opt/application.css /opt/haste/static/
 
+# Adjust title
+RUN sed -i -e "s/haste('hastebin'/haste('frdmn\\\'s pastebin'/g" /opt/haste/static/index.html
+
 # Set working directory
 WORKDIR /opt/haste
 
