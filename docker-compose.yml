@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  hastebin:
+    restart: always
+    image: rlister/hastebin
+    volumes:
+      - "./data/storage/:/app/data"
+    ports:
+     - "${HASTEBIN_PORT}:7777"
+    environment:
+      - "HOST=0.0.0.0"
+      - "PORT=7777"
+      - "KEY_LENGTH=${HASTEBIN_KEY_LENGTH}"
+      - "MAX_LENGTH=${HASTEBIN_MAX_LENGTH}"
+      - "STATIC_MAX_AGE=${HASTEBIN_STATIC_MAX_AGE}"
+      - "RECOMPRESS_STATIC_ASSETS=${HASTEBIN_RECOMPRESS_STATIC_ASSETS}"
+      - "LOGGING_LEVEL=${HASTEBIN_LOGGING_LEVEL}"
+      - "LOGGING_TYPE=${HASTEBIN_LOGGING_TYPE}"
+      - "LOGGING_COLORIZE=${HASTEBIN_LOGGING_COLORIZE}"
+      - "KEY_GENERATOR_TYPE=${HASTEBIN_KEY_GENERATOR_TYPE}"
+      - "STORAGE_TYPE=file"
+      - "STORAGE_PATH=./data"
